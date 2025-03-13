@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Menu | Cozy Cravings</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/menu">Menu</a>
+        <a href="/about">About</a>
+        <a href="/contact">Contact</a>
+    </nav>
+
+    <div class="container">
+        <h1>Our Menu</h1>
+        <p>Delicious flavors from around the world, served with love.</p>
+
+        <h2>🍛 Indian Cuisine</h2>
+        <ul>
+            <li>Butter Chicken - ₹850</li>
+            <li>Paneer Tikka - ₹550</li>
+            <li>Masala Dosa - ₹480</li>
+            <li>Chole Bhature - ₹400</li>
+            <li>Gulab Jamun (2 pcs) - ₹100</li>
+        </ul>
+
+        <h2>🍕 Italian Cuisine</h2>
+        <ul>
+            <li>Margherita Pizza - ₹500</li>
+            <li>Pasta Alfredo - ₹450</li>
+            <li>Bruschetta - ₹480</li>
+            <li>Tiramisu - ₹300</li>
+        </ul>
+
+        <h2>🍜 Chinese Cuisine</h2>
+        <ul>
+            <li>Veg Hakka Noodles - ₹350</li>
+            <li>Chicken Manchurian - ₹700</li>
+            <li>Spring Rolls - ₹380</li>
+            <li>Hot and Sour Soup - ₹250</li>
+        </ul>
+
+        <h2>🍱 Korean Cuisine</h2>
+        <ul>
+            <li>Bibimbap - ₹520</li>
+            <li>Korean Fried Chicken - ₹850</li>
+            <li>Kimchi (on the side) - ₹250</li>
+            <li>Tteokbokki - ₹400</li>
+        </ul>
+
+        <h2>🍲 Nepalese Cuisine</h2>
+        <ul>
+            <li>Momos (8 pcs) - ₹280</li>
+            <li>Thukpa - ₹320</li>
+            <li>Sel Roti - ₹350</li>
+            <li>Gundruk Soup - ₹300</li>
+        </ul>
+    </div>
+    <br>
+    <br>
+    <a href="/order" class="order-btn">Order Now </a>
+    <a href="/admin">Admin Dashboard</a>
+
+
+</body>
+</html>

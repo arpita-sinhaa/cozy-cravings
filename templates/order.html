@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Order Now | Cozy Cravings</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/menu">Menu</a>
+        <a href="/about">About</a>
+        <a href="/contact">Contact</a>
+        <a href="/order">Order Now</a>
+    </nav>
+
+    <h1>Place Your Order </h1>
+
+    <form method="POST" action="/order">
+        <label for="name">Your Name:</label><br>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="email">Your Email:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <h2>Select Your Items:</h2>
+
+        <!-- Indian Cuisine -->
+        <h3>🍛 Indian Cuisine</h3>
+        {% for item in indian %}
+            <label><input type="checkbox" name="items" value="{{ item[0] }}"> {{ item[0] }} (₹{{ item[1] }})</label>
+            <input type="number" name="{{ item[0] }}_qty" min="1" placeholder="Qty"><br>
+        {% endfor%}
+
+        <!-- Italian Cuisine -->
+        <h3>🍕 Italian Cuisine</h3>
+        {% for item in italian %}
+            <label><input type="checkbox" name="items" value="{{ item[0] }}"> {{ item[0] }} (₹{{ item[1] }})</label>
+            <input type="number" name="{{ item[0] }}_qty" min="1" placeholder="Qty"><br>
+        {% endfor %}
+
+        <!-- Chinese Cuisine -->
+        <h3>🍜 Chinese Cuisine</h3>
+        {% for item in chinese %}
+            <label><input type="checkbox" name="items" value="{{ item[0] }}"> {{ item[0] }} (₹{{ item[1] }})</label>
+            <input type="number" name="{{ item[0] }}_qty" min="1" placeholder="Qty"><br>
+        {% endfor %}
+
+        <!-- Korean Cuisine -->
+        <h3>🍱 Korean Cuisine</h3>
+        {% for item in korean %}
+            <label><input type="checkbox" name="items" value="{{ item[0] }}"> {{ item[0] }} (₹{{ item[1] }})</label>
+            <input type="number" name="{{ item[0] }}_qty" min="1" placeholder="Qty"><br>
+        {% endfor %}
+
+        <!-- Nepalese Cuisine -->
+        <h3>🍲 Nepalese Cuisine</h3>
+        {% for item in nepalese %}
+            <label><input type="checkbox" name="items" value="{{ item[0] }}"> {{ item[0] }} (₹{{ item[1] }})</label>
+            <input type="number" name="{{ item[0] }}_qty" min="1" placeholder="Qty"><br>
+        {% endfor %}
+
+        <br>
+        <button type="submit">Submit Order</button>
+    </form>
+
+    {% if order_summary %}
+    <h2>Order Summary</h2>
+    <ul>
+        {% for item in order_summary %}
+            <li>{{ item['item']}} x{{ item['qty']}} - ₹{{ item['cost']}}</li>
+        {% endfor %}
+    </ul>
+    <h3>Total Cost: ₹{{ total_cost }}</h3>
+    {% endif %}
+
+
+</body>
+</html>
+
