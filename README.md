@@ -17,3 +17,6 @@ Database: CSV-based storage for simplicity
 Integrate with a real database like SQLite or PostgreSQL.
 Payment gateway integration.
 
+Live Link: 
+https://cozy-cravings.onrender.com
+
